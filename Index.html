@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjeta Digital - Andrés Salazar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0a2e5c, #1a73e8);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .card {
+      background: #0a2e5c;
+      border: 2px solid #d4af37;
+      border-radius: 20px;
+      padding: 25px;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(0,0,0,0.5);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+    }
+
+    .card img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 3px solid #d4af37;
+      object-fit: cover;
+      margin-bottom: 15px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .card img:hover {
+      transform: scale(1.15) rotate(3deg);
+      box-shadow: 0 0 20px #d4af37;
+    }
+
+    h2 {
+      margin: 10px 0 5px;
+      color: #d4af37;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+      transition: color 0.3s ease;
+    }
+
+    h2:hover { color: #fff; }
+
+    h3 {
+      margin-top: 20px;
+      color: #d4af37;
+      font-size: 1.2em;
+      border-top: 1px solid #d4af37;
+      padding-top: 10px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+      transition: color 0.3s ease;
+    }
+
+    h3:hover { color: #fff; }
+
+    p, li {
+      margin: 5px 0;
+      transition: color 0.3s ease;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    ul li {
+      padding: 5px 0;
+      transition: all 0.3s ease;
+      border-radius: 5px;
+      position: relative;
+    }
+
+    ul li:hover {
+      background: rgba(212,175,55,0.15);
+      padding-left: 12px;
+      box-shadow: 0 0 10px #d4af37;
+    }
+
+    /* Tooltip */
+    ul li span.tooltip {
+      visibility: hidden;
+      width: 220px;
+      background-color: #d4af37;
+      color: #0a2e5c;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 10px;
+      position: absolute;
+      z-index: 1;
+      left: 105%;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 0.9em;
+    }
+
+    ul li:hover span.tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    ul li::before {
+      content: "✔ ";
+      color: #d4af37;
+    }
+
+    .btn {
+      display: block;
+      margin: 12px auto;
+      padding: 12px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      background: #d4af37;
+      color: #0a2e5c;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: #0a2e5c;
+      transform: scale(1.1) rotate(-1deg);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    .qr {
+      margin-top: 20px;
+      display: inline-block;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .qr img {
+      display: block;
+      width: 150px;
+      height: 150px;
+    }
+
+    .qr:hover {
+      transform: scale(1.1) rotate(2deg);
+      box-shadow: 0 8px 20px rgba(212,175,55,0.7);
+    }
+
+    @media(max-width: 480px) {
+      .card {
+        padding: 20px;
+      }
+
+      .card img {
+        width: 110px;
+        height: 110px;
+      }
+
+      .btn {
+        padding: 10px 15px;
+      }
+
+      ul li span.tooltip {
+        left: 100%;
+        width: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="Perfil.jpg" alt="Foto de Andrés Salazar" title="Andrés Salazar - Contador">
+    <h2>Andrés Salazar</h2>
+    <p>Contador Público</p>
+    <p><em>"Asesoría contable y fiscal con soluciones confiables y oportunas"</em></p>
+
+    <h3>Servicios</h3>
+    <ul>
+      <li>
+        <i class="fas fa-file-invoice-dollar"></i> Declaraciones fiscales mensuales y anuales
+        <span class="tooltip">Presentación y control de impuestos mensuales y anuales ante SAT</span>
+      </li>
+      <li>
+        <i class="fas fa-calculator"></i> Contabilidad general para personas físicas y morales
+        <span class="tooltip">Registro y análisis de todas tus operaciones contables</span>
+      </li>
+      <li>
+        <i class="fas fa-user-tie"></i> Nómina y obligaciones patronales
+        <span class="tooltip">Gestión completa de nóminas y pagos de empleados</span>
+      </li>
+      <li>
+        <i class="fas fa-building"></i> Trámites ante el SAT e IMSS
+        <span class="tooltip">Gestión de registros, declaraciones y reportes oficiales</span>
+      </li>
+      <li>
+        <i class="fas fa-chart-line"></i> Asesoría fiscal y financiera
+        <span class="tooltip">Recomendaciones estratégicas para optimizar tus finanzas</span>
+      </li>
+      <li>
+        <i class="fas fa-file-signature"></i> Trámite REPSE, SIROC, ICSOE y SISUB
+        <span class="tooltip">Gestión de registros y permisos especiales según tu industria</span>
+      </li>
+      <li>
+        <i class="fas fa-piggy-bank"></i> Modalidades pensiones IMSS
+        <span class="tooltip">Asesoría en cálculo y modalidad de pensiones IMSS</span>
+      </li>
+    </ul>
+
+    <p>📞 55 8044 4621</p>
+    <p>✉️ salazar_andres11@hotmail.com</p>
+
+    <a href="https://wa.me/525580444621" class="btn" title="Enviar mensaje por WhatsApp">WhatsApp</a>
+    <a href="mailto:salazar_andres11@hotmail.com" class="btn" title="Enviar correo electrónico">Enviar correo</a>
+
+    <div class="qr">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/525580444621" alt="QR WhatsApp" title="Escanea para enviar WhatsApp">
+    </div>
+  </div>
+</body>
+</html>
